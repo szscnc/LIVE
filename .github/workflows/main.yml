@@ -12,7 +12,7 @@ jobs:
   update:
     runs-on: ubuntu-latest
     env:
-      TOKEN: ${{ secrets.M3U_TOKEN }}
+      TOKEN: ${{ secrets.M3U_TOKEN txt_TOKEN}}
     steps:
       - uses: actions/checkout@v4
 
@@ -75,7 +75,7 @@ jobs:
             exit 0
           fi
 
-          git add *.m3u
+          git add *.m3u *.txt
           git commit -m "chore: auto-update IPTV playlists - $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
           echo "✅ 文件已提交"
 
